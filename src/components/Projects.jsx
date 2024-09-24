@@ -15,6 +15,7 @@ const projects = [
       image: recipe, // Use the imported image directly
       link: 'https://github.com/AmonCheruiyot/my-client',
     },
+    
 ];
 
 const Projects = () => {
