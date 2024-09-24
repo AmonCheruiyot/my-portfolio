@@ -10,7 +10,7 @@ const projects = [
       link: 'https://github.com/AmonCheruiyot/Weather-App',
     },
     {
-      title: 'E-commerce App',
+      title: 'Recipe App',
       description: 'An recipe sharing website with Flask backend.',
       image: recipe, // Use the imported image directly
       link: 'https://github.com/AmonCheruiyot/my-client',

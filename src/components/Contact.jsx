@@ -4,61 +4,50 @@ import emailjs from 'emailjs-com';
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const [statusMessage, setStatusMessage] = useState(''); // Combine error and success into one
 
-  // Email validation helper
-  const validateEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(String(email).toLowerCase());
-  };
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.toLowerCase());
 
-  // Submit handler
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError('');
-    setSuccess('');
+    setStatusMessage('');
 
     const { name, email, message } = formData;
 
-    // Basic validation
-    if (!name || !email || !message) {
-      setError('All fields are required.');
+    // Simple validation
+    if (!name || !email || !message || !validateEmail(email)) {
+      setStatusMessage('Please fill in all fields correctly.');
       setLoading(false);
       return;
     }
 
-    if (!validateEmail(email)) {
-      setError('Please enter a valid email address.');
-      setLoading(false);
-      return;
-    }
-
-    // EmailJS service parameters
     const serviceId = 'service_q9zsa7x';
     const templateId = 'template_3er3o2c';
     const publicKey = 'ZpC8hT3PKZcIEG04g';
 
-    // Send form data via EmailJS
     try {
       const result = await emailjs.send(
         serviceId,
         templateId,
         {
-          to_name: 'Recipient Name', // You can dynamically fill this or set it as a constant
-          from_name: name, // From the form input
-          message: message, // From the form input
+          to_name: 'Amon Kiprotich', // You can adjust this
+          from_name: name,
+          from_email: email,
+          message,
         },
         publicKey
       );
+
       if (result.text === 'OK') {
-        setSuccess('Message sent successfully!');
-        setFormData({ name: '', email: '', message: '' });
+        setStatusMessage('Message sent successfully!');
+        setFormData({ name: '', email: '', message: '' }); // Reset form
+      } else {
+        setStatusMessage('Message failed to send. Try again later.');
       }
     } catch (error) {
       console.error('EmailJS error:', error);
-      setError('Failed to send message. Please try again.');
+      setStatusMessage('Error sending message. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -69,8 +58,7 @@ const Contact = () => {
       <div className="container mx-auto text-center">
         <h2 className="text-4xl font-bold">Contact Me</h2>
         <form onSubmit={handleSubmit} className="mt-10 max-w-xl mx-auto space-y-4">
-          {error && <p className="text-red-500">{error}</p>}
-          {success && <p className="text-green-500">{success}</p>}
+          {statusMessage && <p className={`text-${statusMessage.includes('success') ? 'green' : 'red'}-500`}>{statusMessage}</p>}
           <input
             type="text"
             placeholder="Your Name"
