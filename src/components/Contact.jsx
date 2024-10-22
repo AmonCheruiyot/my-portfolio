@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa'; // Import the icons
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -47,6 +48,35 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-gradient-to-r from-gray-800 to-gray-600 text-white">
       <div className="container mx-auto text-center">
         <h2 className="text-4xl font-bold mb-6">Contact Me</h2>
+        
+        {/* Social Media Icons */}
+        <div className="flex justify-center space-x-6 mb-6">
+          <a
+            href="https://github.com/AmonCheruiyot" // Replace with your GitHub profile URL
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-3xl hover:text-gray-400 transition duration-300"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/amon-kiprotich-b67a252b6/" // Replace with your LinkedIn profile URL
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-3xl hover:text-gray-400 transition duration-300"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://wa.me/+254713702378" // Replace with your WhatsApp number (use format: https://wa.me/yournumber)
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-3xl hover:text-gray-400 transition duration-300"
+          >
+            <FaWhatsapp />
+          </a>
+        </div>
+
         <div className="text-5xl font-bold mb-6 border-b-2 border-white pb-2"></div>
         <form onSubmit={handleSubmit} className="mt-10 max-w-xl mx-auto space-y-4">
           {statusMessage && <p className={`text-${statusMessage.includes('success') ? 'green' : 'red'}-500`}>{statusMessage}</p>}

@@ -6,15 +6,17 @@ import { motion } from 'framer-motion';
 const projects = [
     {
         title: 'Weather App',
-        description: 'An app that allows users to check the current weather conditions and forecasts for any city.',
+        description: 'A dynamic web application built with React, allowing users to search and view real-time weather conditions and forecasts for any city worldwide. The app fetches data from a public weather API, providing users with essential weather updates in a clean and intuitive interface.',
         image: weatherapp,
         link: 'https://github.com/AmonCheruiyot/Weather-App',
+        techStack: ['React', 'CSS'], // Add tech stack here
     },
     {
         title: 'Recipe App',
-        description: 'A recipe sharing website with a Flask backend.',
+        description: 'A full-stack web application designed for recipe sharing, built with a Flask backend. Users can explore and share their favorite recipes, complete with ingredients, instructions, and images. The application offers a seamless user experience with efficient data management and a visually appealing UI.',
         image: recipe,
         link: 'https://github.com/AmonCheruiyot/my-client',
+        techStack: ['React', 'Flask'], // Add tech stack here
     },
 ];
 
@@ -48,11 +50,12 @@ const Projects = () => {
                             >
                                 View Project
                             </a>
-                            {/* Optional: Add technology badges */}
                             <div className="mt-2">
-                                {/* Add badges for tech stack used, e.g., */}
-                                <span className="inline-block bg-blue-600 text-xs rounded-full px-2 py-1 text-white mr-2">JavaScript</span>
-                                <span className="inline-block bg-green-600 text-xs rounded-full px-2 py-1 text-white">Flask</span>
+                                {project.techStack.map((tech, techIndex) => (
+                                    <span key={techIndex} className="inline-block bg-blue-600 text-xs rounded-full px-2 py-1 text-white mr-2">
+                                        {tech}
+                                    </span>
+                                ))}
                             </div>
                         </motion.div>
                     ))}
