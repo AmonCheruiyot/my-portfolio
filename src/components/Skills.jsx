@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FaReact, FaPython, FaNodeJs, FaFlask } from 'react-icons/fa';
-import { SiHtml5, SiCss3, SiBootstrap, SiTailwindcss, SiJavascript, SiPostgresql, SiMysql, SiPostman } from 'react-icons/si';
+import { SiHtml5, SiCss3, SiBootstrap, SiTailwindcss, SiJavascript, SiPostgresql, SiMysql, SiPostman, SiThunderbird, SiExcalidraw, SiFigma} from 'react-icons/si';
 import { motion } from 'framer-motion';
 import { BiArrowToBottom, BiArrowToTop } from 'react-icons/bi'; // Import icons for both up and down arrows
 
@@ -17,9 +17,9 @@ const skills = [
   { name: 'PostgreSQL', icon: <SiPostgresql />, description: 'Open-source relational database' },
   { name: 'MySQL', icon: <SiMysql />, description: 'Popular open-source relational database' },
   { name: 'Postman', icon: <SiPostman />, description: 'API development and testing tool' },
-  { name: 'Thunder Client', icon: <SiPostman />, description: 'Lightweight REST API Client for VS Code' },
-  { name: 'Excalidraw', icon: <SiPostman />, description: 'Virtual whiteboard tool for sketching' },
-  { name: 'Figma', icon: <SiPostman />, description: 'Design tool for collaborative UI/UX design' },
+  { name: 'Thunder Client', icon: <SiThunderbird />, description: 'Lightweight REST API Client for VS Code' },
+  { name: 'Excalidraw', icon: <SiExcalidraw />, description: 'Virtual whiteboard tool for sketching' },
+  { name: 'Figma', icon: <SiFigma />, description: 'Design tool for collaborative UI/UX design' },
 ];
 
 const Skills = () => {
