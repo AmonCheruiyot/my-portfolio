@@ -1,7 +1,15 @@
 const Blog = () => {
     const posts = [
-        { title: "Post 1", description: "Learn React for beginners.", link: "/blog/react-beginners" },
-        { title: "Post 2", description: "Understanding Flask routing.", link: "/blog/flask-routing" },
+        {
+            title: "Junior Software Developers",
+            description: "My thoughts and tips for junior developers to navigate the early stages of their career.",
+            link: "https://supercodz.hashnode.dev/junior-software-developers",
+        },
+        {
+            title: "Real-Time Communication in Web Applications Using Socket.io",
+            description: "Exploring the implementation of real-time communication using Socket.io in web applications.",
+            link: "https://supercodz.hashnode.dev/real-time-communication-in-web-applications-using-socketio",
+        },
     ];
 
     return (

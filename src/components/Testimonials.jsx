@@ -1,11 +1,11 @@
 const Testimonials = () => {
     const testimonials = [
         {
-            name: "Jane Doe",
+            name: "Nahashon Muthethia",
             feedback: "Working with Amon was fantastic! He is professional and a great problem-solver.",
         },
         {
-            name: "John Smith",
+            name: "Epenetus Nyaga",
             feedback: "Amon delivered high-quality work and met every deadline.",
         },
     ];
