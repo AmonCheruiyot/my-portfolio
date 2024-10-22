@@ -45,67 +45,87 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-r from-gray-800 to-gray-600 text-white">
-      <div className="container mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-6">Contact Me</h2>
-        
-        {/* Social Media Icons */}
-        <div className="flex justify-center space-x-6 mb-6">
-          <a
-            href="https://github.com/AmonCheruiyot" // Replace with your GitHub profile URL
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white text-3xl hover:text-gray-400 transition duration-300"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/amon-kiprotich-b67a252b6/" // Replace with your LinkedIn profile URL
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white text-3xl hover:text-gray-400 transition duration-300"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="https://wa.me/+254713702378" // Replace with your WhatsApp number (use format: https://wa.me/yournumber)
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white text-3xl hover:text-gray-400 transition duration-300"
-          >
-            <FaWhatsapp />
-          </a>
-        </div>
+    <>
+      <section id="contact" className="py-20 bg-gradient-to-r from-gray-800 to-gray-600 text-white">
+        <div className="container mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6">Contact Me</h2>
+          
+          {/* Social Media Icons */}
+          <div className="flex justify-center space-x-6 mb-6">
+            <a
+              href="https://github.com/AmonCheruiyot"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-3xl hover:text-gray-400 transition duration-300"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/amon-kiprotich-b67a252b6/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-3xl hover:text-gray-400 transition duration-300"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="https://wa.me/+254713702378"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-3xl hover:text-gray-400 transition duration-300"
+            >
+              <FaWhatsapp />
+            </a>
+          </div>
 
-        <div className="text-5xl font-bold mb-6 border-b-2 border-white pb-2"></div>
-        <form onSubmit={handleSubmit} className="mt-10 max-w-xl mx-auto space-y-4">
-          {statusMessage && <p className={`text-${statusMessage.includes('success') ? 'green' : 'red'}-500`}>{statusMessage}</p>}
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="w-full p-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            value={formData.name}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="w-full p-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          />
-          <textarea
-            placeholder="Your Message"
-            className="w-full p-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            value={formData.message}
-            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          ></textarea>
-          <button type="submit" className="w-full p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition duration-300 ease-in-out" disabled={loading}>
-            {loading ? 'Sending...' : 'Send Message'}
-          </button>
-        </form>
-      </div>
-    </section>
+          <div className="text-5xl font-bold mb-6 border-b-2 border-white pb-2"></div>
+          <form onSubmit={handleSubmit} className="mt-10 max-w-xl mx-auto space-y-4">
+            {statusMessage && <p className={`text-${statusMessage.includes('success') ? 'green' : 'red'}-500`}>{statusMessage}</p>}
+            <input
+              type="text"
+              placeholder="Your Name"
+              className="w-full p-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            />
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="w-full p-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            />
+            <textarea
+              placeholder="Your Message"
+              className="w-full p-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={formData.message}
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+            ></textarea>
+            <button type="submit" className="w-full p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition duration-300 ease-in-out" disabled={loading}>
+              {loading ? 'Sending...' : 'Send Message'}
+            </button>
+          </form>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-6 mt-12">
+        <div className="container mx-auto text-center">
+          <p className="text-sm">© {new Date().getFullYear()} Amon Kiprotich. All rights reserved.</p>
+          <div className="flex justify-center space-x-4 mt-4">
+            <a href="https://github.com/AmonCheruiyot" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
+              <FaGithub className="text-2xl" />
+            </a>
+            <a href="https://www.linkedin.com/in/amon-kiprotich-b67a252b6/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
+              <FaLinkedin className="text-2xl" />
+            </a>
+            <a href="https://wa.me/+254713702378" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
+              <FaWhatsapp className="text-2xl" />
+            </a>
+          </div>
+        </div>
+      </footer>
+    </>
   );
 };
 
