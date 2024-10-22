@@ -7,7 +7,8 @@ const Blog = () => {
     return (
         <section id="blog" className="py-20 bg-gradient-to-r from-gray-800 to-gray-600 text-white">
             <div className="container mx-auto text-center">
-                <h2 className="text-5xl font-bold mb-8">Latest Blog Posts</h2>
+                <h2 className="text-5xl font-bold mb-8">Blog Posts</h2>
+                <div className="text-5xl font-bold mb-6 border-b-2 border-white pb-2"></div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     {posts.map((post, index) => (
                         <div key={index} className="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
